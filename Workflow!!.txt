@@ -1,0 +1,64 @@
+Workflow!!
+BACKEND WORKFLOW 
+1. Initialize game state
+
+	- 3x3 data structure to store game state
+	- "X" - player 
+	- "O" - computer
+	- " " - empty 
+	- game_over = False
+	- winner = none
+
+2. Process Player Move
+
+	- convert mouse clock (row, col)
+	- check if selected cell is empty
+		- if not empty -> ignore input
+	- if valid 
+		- "X" in board
+
+3. Evaluate Game State 
+
+	- check all win conditions
+		- 3 rows
+		- 3 columns
+		- 2 diagonals
+	- match found:
+		- winner = "X"
+		- game_over = true
+	- board is full
+		- winner = "tie"
+		- game_over = True
+
+4. Computer Decision Logic 
+
+	- if game not over 
+		- generate empty cells 
+		- randomly select one 
+		- place "O" in that cell
+
+5. Evaluate Game State (post computer move) 
+
+	- repeat same win/tie checks
+	- if computer wins:
+		- winner = "0"
+		- game_over = True
+
+6. Maintain Game Loop 
+	
+	- Continuously 
+		- accept input
+		- update board
+		- re-evaluate state
+	- Stop accepting moves when game_over = True
+
+7. Reset logic 
+	
+	- Clear board
+	- Reset all flags
+	- resume normal loop
+
+
+
+
+
